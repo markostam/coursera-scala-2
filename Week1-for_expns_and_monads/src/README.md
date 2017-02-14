@@ -27,4 +27,4 @@ is shorthand for
 ### For expressions and pattern matching
 
 + the left-hand side of a generator can also be a pattern
-+ you pull a value from the ```i <- thing``` statement above and assign a pattern to it, this basically becomes a filter or withFilter 
++ you pull a value from the ```x <- e1``` statement above and assign a pattern to it, this basically becomes a filter or withFilter 
