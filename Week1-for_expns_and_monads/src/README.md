@@ -45,13 +45,14 @@ yield b.title
 
 ```scala
 
-for {
+{ for {
 b1 <- books
 b2 <- books
-if b1 != b2
+if b1 < b2 // we do this instead of b1 != b2 so that we don't get two pairs of each author
 a1 <- b1.authors
 a2 <- b2.authors
 if a1 == a2
-} yield a1
+} yield a1 
+}.distinct // we use distinct in addition to < since an author may have more than two books
 
 ```
