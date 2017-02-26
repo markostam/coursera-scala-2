@@ -56,3 +56,11 @@ if a1 == a2
 }.distinct // we use distinct in addition to < since an author may have more than two books
 
 ```
+
+## Translation of For
+
++ implementation of for-expressions. there is a systematic translation that maps for-exp's to combinations of higher-order functions.
++ for is closely related to  ```map```, ```flatMap``` and ```filter```
+  + ```xs.map(x => f(x))``` == ```for (x <- xs) yield f(x)```
+  + ```xs.flatMap(x => f(x))``` == ```for (x <- xs; y <- f(x)) yield y```
+  + ```x.filter(x => p(x))``` == ```for (x <- xs if p(x)) yield x```
