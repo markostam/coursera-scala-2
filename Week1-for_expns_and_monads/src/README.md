@@ -28,3 +28,8 @@ is shorthand for
 
 + the left-hand side of a generator can also be a pattern
 + you pull a value from the ```x <- e1``` statement above and assign a pattern to it, this basically becomes a filter or withFilter 
+
+## Queries with For
+
+For Expressions look a lot like SQL queries.
+
