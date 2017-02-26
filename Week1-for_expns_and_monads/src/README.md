@@ -41,3 +41,17 @@ yield b.title
 
 ```
 
++ Find the name of all authors who have written at least two books present in the db
+
+```scala
+
+for {
+b1 <- books
+b2 <- books
+if b1 != b2
+a1 <- b1.authors
+a2 <- b2.authors
+if a1 == a2
+} yield a1
+
+```
