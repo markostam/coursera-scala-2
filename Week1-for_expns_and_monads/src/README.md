@@ -31,5 +31,13 @@ is shorthand for
 
 ## Queries with For
 
-For Expressions look a lot like SQL queries.
++ For Expressions look a lot like SQL queries.
++ Find titles of books whose author's name is "Bird"
+
+```scala
+
+for (b <- books; a <- b.authors if a startsWith "Bird,")
+yield b.title
+
+```
 
