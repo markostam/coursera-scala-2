@@ -55,3 +55,17 @@ if a1 == a2
 
 ## Functional Random Generators
 + writing ```self => ``` in a superclass creates an alias to that classes ```this``` parameter so that you can call the superclasses ```this``` without invoking the subclasses ```this```
++ i.e:
+
+```scala
+
+trait Generator[+t] {
+self =>   // alias for "this"
+
+def generate: T
+
+def map[S](f: T => S): Generator[S] = new Generator[S] {
+  def generate = f(self.generate)
+}
+
+```
