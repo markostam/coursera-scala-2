@@ -99,3 +99,14 @@ def unit[T](x: T): M[T]
   + ```Option``` is a monad with ```unit(x) = Some(x)```
   + ```Generator``` is a monad with ```unit(x) = single(x)```
 + ```flatMap``` is an operation on each of these types, whereas ```unit``` in scala is diff for each monad
+
+### Monads and map
+
++ map is defined for every monad as combination of flatMap and unit
+
+```scala
+
+m.map(f) == m.flatMap(x => unit(f(x)))
+         == m.flatMap(f andThen unit)
+
+```
