@@ -92,3 +92,10 @@ trait M[T] {
 def unit[T](x: T): M[T]
 
 ```
+
++ Examples of Monads:
+  + ```List``` is a monad with ```unit(x) = List(x)```
+  + ```Set``` is a monad with ```unit(x) = Set(x)```
+  + ```Option``` is a monad with ```unit(x) = Some(x)```
+  + ```Generator``` is a monad with ```unit(x) = single(x)```
++ ```flatMap``` is an operation on each of these types, whereas ```unit``` in scala is diff for each monad
