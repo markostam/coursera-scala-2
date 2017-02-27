@@ -54,6 +54,8 @@ if a1 == a2
 + these are the basis for Scala database connection frameworks ScalaQuery and Slick, similar ideas underly M$ LINQ
 
 ## Functional Random Generators
+
++ we build up generator for various types (booleans, pairs, etc) by defining an integer random number generator using a java random number generator built in function.
 + writing ```self => ``` in a superclass creates an alias to that classes ```this``` parameter so that you can call the superclasses ```this``` without invoking the subclasses ```this```
 + i.e:
 
@@ -69,3 +71,8 @@ def map[S](f: T => S): Generator[S] = new Generator[S] {
 }
 
 ```
+
++ you can also just do name of function.this.f i.e. ```Generator.this.generate```
+
+### culminates in explaining quickcheck and ScalaCheck, which use random number generators to ensure tests work for many conditions. you just specify how many times you want the tests to run.
+
