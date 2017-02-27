@@ -64,3 +64,6 @@ if a1 == a2
   + ```xs.map(x => f(x))``` == ```for (x <- xs) yield f(x)```
   + ```xs.flatMap(x => f(x))``` == ```for (x <- xs; y <- f(x)) yield y```
   + ```x.filter(x => p(x))``` == ```for (x <- xs if p(x)) yield x```
++ scala compiler translates ```for``` expressions to ```map```, ```flatMap``` and a lazy variant of ```filter```
+  + lazy ```filter``` is ```withFilter```
++ these are the basis for Scala database connection frameworks ScalaQuery and Slick, similar ideas underly M$ LINQ
