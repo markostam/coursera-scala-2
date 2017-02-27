@@ -114,9 +114,9 @@ m.map(f) == m.flatMap(x => unit(f(x)))
 ### Monad Laws
 
 + to qualify as a monad, a type has to satisfy three laws:
-  + *Associativity: *
+  + *Associativity:*
     + ```m.fatMap(f).flatMap(g) == m.flatMap(x => f(x).flatMap(g))```
-  + * Left unit *
+  + *Left unit*
     + ```unit(x).flatMap(f) == f(x)```
-  + * Right unit *
+  + *Right unit*
     + ``` m.flatMap(unit) == m ```
