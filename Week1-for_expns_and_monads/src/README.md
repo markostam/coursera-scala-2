@@ -54,4 +54,4 @@ if a1 == a2
 + these are the basis for Scala database connection frameworks ScalaQuery and Slick, similar ideas underly M$ LINQ
 
 ## Functional Random Generators
-
++ writing ```self => ``` in a superclass creates an alias to that classes ```this``` parameter so that you can call the superclasses ```this``` without invoking the subclasses ```this```
