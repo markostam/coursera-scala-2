@@ -79,6 +79,16 @@ def map[S](f: T => S): Generator[S] = new Generator[S] {
 
 ## Monads
 
-+ ```map``` and ```flatmap``` are types of monad
 + a monad ```M``` is a parametric type ```M[T]``` with two operations, ```flatMap``` and ```unit```, that have to satisfy some laws
   + in the literature ```flatMap``` is called ```bind```
++ in scala, it's a trait as follows:
+
+```scala
+
+trait M[T] {
+  def flatMap[U](f: T => M[U]): M[U]
+}
+
+def unit[T](x: T): M[T]
+
+```
