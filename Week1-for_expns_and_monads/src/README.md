@@ -77,3 +77,8 @@ def map[S](f: T => S): Generator[S] = new Generator[S] {
 + **culminates in explaining quickcheck and ScalaCheck, which use random number generators to ensure tests work for many conditions. you just specify how many times you want the tests to run.**
 
 
+## Monads
+
++ ```map``` and ```flatmap``` are types of monad
++ a monad ```M``` is a parametric type ```M[T]``` with two operations, ```flatMap``` and ```unit```, that have to satisfy some laws
+  + in the literature ```flatMap``` is called ```bind```
