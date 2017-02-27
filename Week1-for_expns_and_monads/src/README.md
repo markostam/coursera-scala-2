@@ -120,3 +120,8 @@ m.map(f) == m.flatMap(x => unit(f(x)))
     + ```unit(x).flatMap(f) == f(x)```
   + *Right unit*
     + ``` m.flatMap(unit) == m ```
+
+### Monoid
+
++ superset of Monad, but without ```bind```/```flatMap```
++ i.e. Integer is a Monoid becuase it follows associativity
