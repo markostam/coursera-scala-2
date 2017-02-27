@@ -1,6 +1,6 @@
 # For-expressions and Monads
 
-## Recap Fucntions and Pattern Matching
+## Recap Functions and Pattern Matching
 
 ### Functions are objects
 
@@ -12,22 +12,7 @@ is shorthand for
 
 ### Partial Functions
 
-+ you can change a pattern match functino to a ```PartialFunction``` which automatically gives your function an ```isDefinedAt``` method.
-
-## Recap: Collections
-
-### Translation of For
-
-1. ```for(x <- e1) yield e2``` translates to ```e1.map(x => e2)```
-2. ``` for (x <- e1 if f; s) yield e2 ``` translates to ```for (x <- e1.withFilter(x => f); s) yield e2```
-  + ```withFilter``` is like ```filter``` but does not produce an intermediate list, but instead filters the following ```map``` or ```flatmap``` application.
-3. ```for(x <- e1; y <- e2; s) yield e3``` tranlsates to ```e1.flatMat(x => for (y <- e2; s) yield e3)```
-  + and then the translation continues with the new expression
-  
-### For expressions and pattern matching
-
-+ the left-hand side of a generator can also be a pattern
-+ you pull a value from the ```x <- e1``` statement above and assign a pattern to it, this basically becomes a filter or withFilter 
++ you can change a pattern match functino to a ```PartialFunction``` which automatically gives your function an ```isDefinedAt``` method. 
 
 ## Queries with For
 
@@ -67,3 +52,6 @@ if a1 == a2
 + scala compiler translates ```for``` expressions to ```map```, ```flatMap``` and a lazy variant of ```filter```
   + lazy ```filter``` is ```withFilter```
 + these are the basis for Scala database connection frameworks ScalaQuery and Slick, similar ideas underly M$ LINQ
+
+## Functional Random Generators
+
