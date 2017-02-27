@@ -74,5 +74,6 @@ def map[S](f: T => S): Generator[S] = new Generator[S] {
 
 + you can also just do name of function.this.f i.e. ```Generator.this.generate```
 
-### culminates in explaining quickcheck and ScalaCheck, which use random number generators to ensure tests work for many conditions. you just specify how many times you want the tests to run.
++ **culminates in explaining quickcheck and ScalaCheck, which use random number generators to ensure tests work for many conditions. you just specify how many times you want the tests to run.**
+
 
