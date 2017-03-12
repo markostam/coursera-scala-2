@@ -146,6 +146,9 @@ case class Failure(ex: Exception) extends Try[Nothing]
 
 ### map and flatMap on a Try
 
-+ Try can have maps and flatmaps too, it's a monad
++ Try can have maps and flatmaps too
 + basically it looks like: ```t.map(f) == t.flatMap(x => Try(f(x))) == t.flatMap(f andThen Try)```
++ Try is not a monad because it fails the left unit law. 
+  + ```Unit(x).flatMap(f) != f(x)```
+  + because ```Unit(x)``` can throw an exception.
 
