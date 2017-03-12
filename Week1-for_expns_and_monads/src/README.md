@@ -126,3 +126,17 @@ m.map(f) == m.flatMap(x => unit(f(x)))
 + superset of Monad, but without ```bind```/```flatMap```
 + i.e. Integer is a Monoid becuase it follows associativity
   + ```x + (y + z) == (x + y) + z ```
+
+## Try Type
+
++ Try resembles an ```Option``` but instead fo ```Some/None``` there is a ```Sucess``` case with a value and a ```Failure``` case that throws an exception.
+
+```scala
+
+abstract class Try[+T]
+case class Successs[T](X: t)      extends Try[T]
+case class Failure(ex: Exception) extends Try[Nothing]
+
+```
+
++ ```Try``` is used to pass results of computations that can fail with an exception between threads and computers without intterupting computation
