@@ -129,7 +129,7 @@ m.map(f) == m.flatMap(x => unit(f(x)))
 
 ## Try Type
 
-+ Try resembles an ```Option``` but instead fo ```Some/None``` there is a ```Sucess``` case with a value and a ```Failure``` case that throws an exception.
++ ```Try``` resembles an ```Option``` but instead fo ```Some/None``` there is a ```Sucess``` case with a value and a ```Failure``` case that throws an exception.
 
 ```scala
 
@@ -140,3 +140,12 @@ case class Failure(ex: Exception) extends Try[Nothing]
 ```
 
 + ```Try``` is used to pass results of computations that can fail with an exception between threads and computers without intterupting computation
+
++ You can wrap an arbitrary computation in a ```Try```
++ e.g. ```Try(epr)``` will return a val if computation succeeds and a failure val if it doesn't.
+
+### map and flatMap on a Try
+
++ Try can have maps and flatmaps too, it's a monad
++ basically it looks like: ```t.map(f) == t.flatMap(x => Try(f(x))) == t.flatMap(f andThen Try)```
+
