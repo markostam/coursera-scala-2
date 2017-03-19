@@ -29,3 +29,6 @@ trait Stream[+A] extends Seq[A] {
   def isempty: Boolean
   def head: A
   def tail
+  ...
+  
+```
