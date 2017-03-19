@@ -18,4 +18,14 @@
 2) ```Stream(1,2,3)```
 3) ```(1 to 100).toStream```
 
-+ ```x #:: xs == Stream.cons(x, xs)```
+### Stream cons operator
++ ```x #:: xs == Stream.cons(x, xs)``` produces a Stream similar to how ```x :: xs == List.cons(x, xs)``` produces a list.
+
+### Implementation of Streams
+
+```scala
+
+trait Stream[+A] extends Seq[A] {
+  def isempty: Boolean
+  def head: A
+  def tail
